@@ -48,11 +48,23 @@ const NavBar = () => {
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
         
-                  <NavLink to="/category/1"  > Arduino Modules </NavLink>
+                  <NavLink to="/category/2I8igibINUVCV0KrL42U"  > LCD Modules </NavLink>
 
                 <br/>
-                  <NavLink to="/category/2" > Shield Modules </NavLink>
+                  <NavLink to="/category/
+WQeItyhuznUO0qYzjGro" > Shield Modules </NavLink>
            
+                  <br/>
+                  <NavLink to="/category/fBn1BwrEHNMzAq51nnUJ" > Robotics </NavLink>
+
+                  <br/>
+                  <NavLink to="/category/osanJ9f2r9ywdJmSanc9" > Accesories </NavLink>
+
+                  <br/>
+                  <NavLink to="/category/vbf5QmWbx5vIchzUaHZL" > Arduino Modules </NavLink>
+
+                  <br/>
+                  <NavLink to="/category/yhWK5XNtkNq89R5XMS0Z" > Motors </NavLink>
                 </Nav>
     
               </Offcanvas.Body>

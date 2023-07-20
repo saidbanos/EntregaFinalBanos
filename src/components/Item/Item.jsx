@@ -5,7 +5,6 @@ import Card from 'react-bootstrap/Card';
 const Item = ({id, name, price, img, stock}) => {
 
   const imgreturn = img[0];
-  console.log(imgreturn);
 
   return (
     <div className="item-container">
