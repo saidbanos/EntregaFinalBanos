@@ -35,8 +35,6 @@ const Checkout = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [validated, setValidated] = useState(false);
 
-
-
   useEffect(() => {
     setIsSameEmail(emailConfirmation && email === emailConfirmation);
   }, [email, emailConfirmation]);
@@ -52,19 +50,7 @@ const Checkout = () => {
   };
 
   const formHandler = (e) => {
-    /*     e.preventDefault();
 
-    if (!name || !lastname || !phonenumber || !email || !emailConfirmation || !password) {
-      setError("Please complete all fields.");
-      return;
-    }
-
-    if (email !== emailConfirmation) {
-      setError(
-        "The Email and Confirm Email fields are not the same, please confirm."
-      );
-      return;
-    } */
     const form = e.currentTarget;
     if (form.checkValidity() === false || !isSameEmail) {
       e.preventDefault();
