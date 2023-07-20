@@ -1,8 +1,8 @@
 import { useState, useContext } from "react";
-import Toast from 'react-bootstrap/Toast';
-import { CartContext } from '../../context/CartContext';
-import './ItemCount.css';
-import Button from 'react-bootstrap/Button';
+import Toast from "react-bootstrap/Toast";
+import { CartContext } from "../../context/CartContext";
+import "./ItemCount.css";
+import Button from "react-bootstrap/Button";
 
 const ItemCount = ({ initialValue, stock, addFunction }) => {
   const [counter, setCounter] = useState(initialValue);
@@ -31,23 +31,24 @@ const ItemCount = ({ initialValue, stock, addFunction }) => {
   return (
     <>
       <div>
-        
+        <Button variant="success" onClick={decrease}>
+          {" "}
+          -{" "}
+        </Button>
 
-        <Button  variant="success" onClick={decrease}> - </Button>
+        <strong> {counter} </strong>
 
-
-
-        <strong> {counter}  </strong> 
-
-        <Button  variant="success" onClick={increase}> + </Button>
-
+        <Button variant="success" onClick={increase}>
+          {" "}
+          +{" "}
+        </Button>
       </div>
       <br />
 
-      <Button  variant="success" onClick={handleAddToCart}>  Add to Cart </Button>
-
-
-   
+      <Button variant="success" onClick={handleAddToCart}>
+        {" "}
+        Add to Cart{" "}
+      </Button>
 
       <Toast
         className="d-inline-block m-1"

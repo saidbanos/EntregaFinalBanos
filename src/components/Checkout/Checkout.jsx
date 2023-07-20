@@ -39,7 +39,6 @@ const Checkout = () => {
     setIsSameEmail(emailConfirmation && email === emailConfirmation);
   }, [email, emailConfirmation]);
 
-  
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
@@ -50,7 +49,6 @@ const Checkout = () => {
   };
 
   const formHandler = (e) => {
-
     const form = e.currentTarget;
     if (form.checkValidity() === false || !isSameEmail) {
       e.preventDefault();
@@ -135,10 +133,12 @@ const Checkout = () => {
                     </Card.Header>
                     <Card.Body>
                       <Card.Text>
-
-                      <img className='imgSeeDetails' src={"/CompletedOrderActivePicture.png"} />
-                      <br />
-                      <br />
+                        <img
+                          className="imgSeeDetails"
+                          src={"/CompletedOrderActivePicture.png"}
+                        />
+                        <br />
+                        <br />
                         <h5>Your order was successful! Your order Id is:</h5>
                       </Card.Text>
                       <Card.Text>

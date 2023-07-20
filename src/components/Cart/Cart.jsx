@@ -2,20 +2,21 @@ import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
 import CartItem from "../CartItem/CartItem";
-import Button from 'react-bootstrap/Button';
-import Table from 'react-bootstrap/Table';
-import './Cart.css';
-import Card from 'react-bootstrap/Card';
+import Button from "react-bootstrap/Button";
+import Table from "react-bootstrap/Table";
+import "./Cart.css";
+import Card from "react-bootstrap/Card";
 
 const Cart = () => {
-  const { cart, emptyCart, total, quantityTotal, removeProduct } = useContext(CartContext);
+  const { cart, emptyCart, total, quantityTotal, removeProduct } =
+    useContext(CartContext);
 
   if (quantityTotal === 0) {
     return (
       <>
         <br />
         <div className="card-container">
-          <Card style={{ width: '65rem' }}>
+          <Card style={{ width: "65rem" }}>
             <Card.Body>
               <Card.Header>
                 <Card.Title>Cart</Card.Title>
@@ -42,7 +43,7 @@ const Cart = () => {
     <>
       <br />
       <div className="card-container">
-        <Card style={{ width: '65rem' }}>
+        <Card style={{ width: "65rem" }}>
           <Card.Body>
             <Card.Header>
               <Card.Title>Cart</Card.Title>
@@ -60,11 +61,11 @@ const Cart = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {cart.map(product => (
+                  {cart.map((product) => (
                     <tr key={product.item.id}>
                       <td>
                         <Link to={`/item/${product.item.id}`}>
-                          <img className='imgCart' src={product.item.img[0]} />
+                          <img className="imgCart" src={product.item.img[0]} />
                         </Link>
                       </td>
                       <td>
@@ -74,9 +75,19 @@ const Cart = () => {
                       </td>
                       <td>${product.item.price}</td>
                       <td>{product.quantity}</td>
-                      <td>${Math.round(product.quantity * product.item.price * 100) / 100}</td>
                       <td>
-                        <Button variant="danger" onClick={() => removeProduct(product.item.id)}>Remove</Button>
+                        $
+                        {Math.round(
+                          product.quantity * product.item.price * 100
+                        ) / 100}
+                      </td>
+                      <td>
+                        <Button
+                          variant="danger"
+                          onClick={() => removeProduct(product.item.id)}
+                        >
+                          Remove
+                        </Button>
                       </td>
                     </tr>
                   ))}
@@ -86,7 +97,11 @@ const Cart = () => {
                     <th></th>
                     <th>Total Quantity: {quantityTotal}</th>
                     <th>Total: ${total}</th>
-                    <th><Button variant="danger" onClick={() => emptyCart()}>Remove All</Button></th>
+                    <th>
+                      <Button variant="danger" onClick={() => emptyCart()}>
+                        Remove All
+                      </Button>
+                    </th>
                   </tr>
                 </tbody>
               </Table>
@@ -105,6 +120,6 @@ const Cart = () => {
       </div>
     </>
   );
-}
+};
 
 export default Cart;

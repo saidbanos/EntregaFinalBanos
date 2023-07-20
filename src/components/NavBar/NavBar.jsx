@@ -41,7 +41,7 @@ const NavBar = () => {
           className="bg-body-tertiary mb-3"
         >
           <Container fluid>
-            <Navbar.Brand href="#">
+            <Navbar.Brand>
               <Link to="/">
                 <img className="imgFicticium" src={imgFicticium} alt="" />
               </Link>

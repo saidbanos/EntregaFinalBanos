@@ -1,14 +1,14 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useContext } from 'react';
-import { CartContext } from '../../context/CartContext';
-import ItemCount from '../ItemCount/ItemCount';
-import Toast from 'react-bootstrap/Toast';
-import './ItemDetail.css';
-import CardGroup from 'react-bootstrap/CardGroup';
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-import Carousel from 'react-bootstrap/Carousel';
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
+import ItemCount from "../ItemCount/ItemCount";
+import Toast from "react-bootstrap/Toast";
+import "./ItemDetail.css";
+import CardGroup from "react-bootstrap/CardGroup";
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
+import Carousel from "react-bootstrap/Carousel";
 
 const ItemDetail = ({ id, name, price, img, description, stock }) => {
   const [addQuantity, setAddQuantity] = useState(0);
@@ -25,7 +25,7 @@ const ItemDetail = ({ id, name, price, img, description, stock }) => {
     <>
       {name && price && stock > 0 ? (
         <div>
-          <CardGroup style={{ width: '65rem' }}>
+          <CardGroup style={{ width: "65rem" }}>
             <Card>
               <Carousel data-bs-theme="dark" slide={false} interval={null}>
                 <Carousel.Item>
@@ -63,42 +63,41 @@ const ItemDetail = ({ id, name, price, img, description, stock }) => {
           </CardGroup>
         </div>
       ) : stock <= 0 ? (
-
         <>
-        <br />
-        <div className="card-container">
-          <Card style={{ width: '65rem' }}>
-            <Card.Body>
-              <Card.Header>
-                <Card.Title>Product availability</Card.Title>
-              </Card.Header>
+          <br />
+          <div className="card-container">
+            <Card style={{ width: "65rem" }}>
               <Card.Body>
-                <Card.Text>
-                  <h5>This product is not in stock at the moment.</h5>
-                </Card.Text>
+                <Card.Header>
+                  <Card.Title>Product availability</Card.Title>
+                </Card.Header>
+                <Card.Body>
+                  <Card.Text>
+                    <h5>This product is not in stock at the moment.</h5>
+                  </Card.Text>
+                </Card.Body>
               </Card.Body>
-            </Card.Body>
-          </Card>
-        </div>
-      </>
+            </Card>
+          </div>
+        </>
       ) : (
         <>
-        <br />
-        <div className="card-container">
-          <Card style={{ width: '65rem' }}>
-            <Card.Body>
-              <Card.Header>
-                <Card.Title>Product availability</Card.Title>
-              </Card.Header>
+          <br />
+          <div className="card-container">
+            <Card style={{ width: "65rem" }}>
               <Card.Body>
-                <Card.Text>
-                  <h5>The product with Id: {id} does not exist.</h5>
-                </Card.Text>
+                <Card.Header>
+                  <Card.Title>Product availability</Card.Title>
+                </Card.Header>
+                <Card.Body>
+                  <Card.Text>
+                    <h5>The product with Id: {id} does not exist.</h5>
+                  </Card.Text>
+                </Card.Body>
               </Card.Body>
-            </Card.Body>
-          </Card>
-        </div>
-      </>
+            </Card>
+          </div>
+        </>
       )}
     </>
   );

@@ -24,9 +24,11 @@ const ItemListContainer = () => {
   }, []);
 
   useEffect(() => {
-    const category = categories.find(cat => cat.description === categoryDescription);
+    const category = categories.find(
+      (cat) => cat.description === categoryDescription
+    );
     const categoryId = category ? category.id : null;
-    
+
     const misProducts = categoryId
       ? query(collection(db, "products"), where("idCat", "==", categoryId))
       : collection(db, "products");
