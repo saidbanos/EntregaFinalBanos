@@ -1,0 +1,10 @@
+.formStyle {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .button-container1 {
+    display: flex;
+    justify-content: flex-end;
+  }
+  

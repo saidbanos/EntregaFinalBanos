@@ -1,0 +1,15 @@
+li {
+    display: inline-block;
+    margin: 1rem;
+    cursor: pointer;
+}
+
+.imgFicticium {
+    width: 20rem;
+}
+
+.banner {
+    margin: 0rem;
+    width: 100%;
+    height: auto;
+}

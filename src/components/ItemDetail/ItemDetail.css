@@ -1,0 +1,15 @@
+.contenedorItem {
+    text-align: center;
+    border: 1px solid #e3e1e1;
+    margin: 3rem;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1rem;
+    align-items: center;
+}
+
+img {
+    width: 25rem;
+    object-fit: contain;
+}
+
