@@ -39,15 +39,6 @@ const Checkout = () => {
     setIsSameEmail(emailConfirmation && email === emailConfirmation);
   }, [email, emailConfirmation]);
 
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const handleEmailConfirmationChange = (e) => {
-    setEmailConfirmation(e.target.value);
-    setEmailConfirmationValid(e.target.value === email);
-  };
-
   const formHandler = (e) => {
     const form = e.currentTarget;
     if (form.checkValidity() === false || !isSameEmail) {
@@ -122,6 +113,32 @@ const Checkout = () => {
         </div>
       ) : (
         <>
+          {error && (
+            <>
+              <br />
+              <div className="card-container">
+                <Card style={{ width: "65rem" }}>
+                  <Card.Body>
+                    <Card.Header>
+                      <Card.Title>Error</Card.Title>
+                    </Card.Header>
+                    <Card.Body>
+                      <Card.Text>
+                        <h5>{error}</h5>
+                      </Card.Text>
+                    </Card.Body>
+                  </Card.Body>
+                </Card>
+              </div>
+              <br />
+              <div className="button-container">
+                <Link to="/">
+                  <Button variant="danger">Continue Shopping</Button>
+                </Link>
+              </div>
+            </>
+          )}
+
           {orderId ? (
             <>
               <br />

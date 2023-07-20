@@ -2,8 +2,6 @@ import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
-import CardGroup from "react-bootstrap/CardGroup";
-import Card from "react-bootstrap/Card";
 import Table from "react-bootstrap/Table";
 import "./CartItem.css";
 

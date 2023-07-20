@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 
 const Item = ({ id, name, price, img, stock }) => {
-  const imgreturn = img[0];
 
   return (
     <div className="item-container">

@@ -1,19 +1,15 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import ItemCount from "../ItemCount/ItemCount";
-import Toast from "react-bootstrap/Toast";
 import "./ItemDetail.css";
 import CardGroup from "react-bootstrap/CardGroup";
-import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Carousel from "react-bootstrap/Carousel";
 
 const ItemDetail = ({ id, name, price, img, description, stock }) => {
   const [addQuantity, setAddQuantity] = useState(0);
   const { addProduct } = useContext(CartContext);
-  const [show, setShow] = useState(false);
 
   const manejadorQuantity = (quantity) => {
     setAddQuantity(quantity);
