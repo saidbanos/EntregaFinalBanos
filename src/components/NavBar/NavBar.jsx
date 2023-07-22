@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../services/config";
 import CartWidget from "../CartWidget/CartWidget";
@@ -8,10 +8,12 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import { List } from 'react-bootstrap-icons'; // Import the icon
 
 const NavBar = () => {
   const imgFicticium = "/imgFicticium.png";
-  const expand = false;
+  const expand = "md";
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
@@ -44,32 +46,16 @@ const NavBar = () => {
             </Navbar.Brand>
 
             <Nav className="me-auto">
-              <Navbar.Toggle
-                aria-controls={`offcanvasNavbar-expand-${expand}`}
-              />
-              <Navbar.Offcanvas
-                id={`offcanvasNavbar-expand-${expand}`}
-                aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
-                placement="start"
+              <NavDropdown
+                title={<List color="grey" size={30} />}
+                id={`offcanvasNavbarDropdown-expand-${expand}`}
               >
-                <Offcanvas.Header closeButton>
-                  <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                    Categories
-                  </Offcanvas.Title>
-                </Offcanvas.Header>
-                <Offcanvas.Body>
-                  <Nav className="justify-content-end flex-grow-1 pe-3">
-                    {categories.map((category) => (
-                      <>
-                        <NavLink to={`/category/${category.description}`}>
-                          {category.displayName}
-                        </NavLink>
-                        <br />
-                      </>
-                    ))}
-                  </Nav>
-                </Offcanvas.Body>
-              </Navbar.Offcanvas>
+                {categories.map((category) => (
+                  <NavDropdown.Item key={category.id} as={Link} to={`/category/${category.description}`}>
+                    {category.displayName}
+                  </NavDropdown.Item>
+                ))}
+              </NavDropdown>
             </Nav>
 
             <CartWidget />
