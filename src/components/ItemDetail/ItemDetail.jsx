@@ -60,44 +60,44 @@ const ItemDetail = ({ id, name, price, img, description, stock }) => {
         </Container>
       ) : stock <= 0 ? (
         <Container fluid>
-          <Row className="justify-content-md-center">
-            <Col xs={12} md={8}>
-              <br />
-              <Card>
+        <Row className="justify-content-md-center">
+          <Col xs={12} md={8}>
+            <br />
+            <Card>
+              <Card.Body>
+                <Card.Header>
+                  <Card.Title>Product availability</Card.Title>
+                </Card.Header>
                 <Card.Body>
-                  <Card.Header>
-                    <Card.Title>Product availability</Card.Title>
-                  </Card.Header>
-                  <Card.Body>
-                    <Card.Text>
-                      <h5>This product is not in stock at the moment.</h5>
-                    </Card.Text>
-                  </Card.Body>
+                  <Card.Text>
+                    <h5>This product is not in stock at the moment.</h5>
+                  </Card.Text>
                 </Card.Body>
-              </Card>
-            </Col>
-          </Row>
-        </Container>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+      </Container>
       ) : (
         <Container fluid>
-          <Row className="justify-content-md-center">
-            <Col xs={12} md={8}>
-              <br />
-              <Card>
+        <Row className="justify-content-md-center">
+          <Col xs={12} md={8}>
+            <br />
+            <Card>
+              <Card.Body>
+                <Card.Header>
+                  <Card.Title>Product availability</Card.Title>
+                </Card.Header>
                 <Card.Body>
-                  <Card.Header>
-                    <Card.Title>Product availability</Card.Title>
-                  </Card.Header>
-                  <Card.Body>
-                    <Card.Text>
-                      <h5>The product with Id: {id} does not exist.</h5>
-                    </Card.Text>
-                  </Card.Body>
+                  <Card.Text>
+                    <h5>The product with Id: {id} does not exist.</h5>
+                  </Card.Text>
                 </Card.Body>
-              </Card>
-            </Col>
-          </Row>
-        </Container>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+      </Container>
       )}
     </>
   );
