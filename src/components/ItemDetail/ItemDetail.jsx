@@ -4,7 +4,6 @@ import ItemCount from "../ItemCount/ItemCount";
 import { Container, Row, Col } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import Carousel from "react-bootstrap/Carousel";
-import "./ItemDetail.css";
 
 const ItemDetail = ({ id, name, price, img, description, stock }) => {
   const [addQuantity, setAddQuantity] = useState(0);
@@ -61,10 +60,10 @@ const ItemDetail = ({ id, name, price, img, description, stock }) => {
         </Container>
       ) : stock <= 0 ? (
         <Container fluid>
-          <Row>
-            <Col xs={12}>
+          <Row className="justify-content-md-center">
+            <Col xs={12} md={8}>
               <br />
-              <Card style={{ width: "65rem" }}>
+              <Card>
                 <Card.Body>
                   <Card.Header>
                     <Card.Title>Product availability</Card.Title>
@@ -81,10 +80,10 @@ const ItemDetail = ({ id, name, price, img, description, stock }) => {
         </Container>
       ) : (
         <Container fluid>
-          <Row>
-            <Col xs={12}>
+          <Row className="justify-content-md-center">
+            <Col xs={12} md={8}>
               <br />
-              <Card style={{ width: "65rem" }}>
+              <Card>
                 <Card.Body>
                   <Card.Header>
                     <Card.Title>Product availability</Card.Title>

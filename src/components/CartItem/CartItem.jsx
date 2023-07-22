@@ -3,7 +3,6 @@ import { CartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Table from "react-bootstrap/Table";
-import "./CartItem.css";
 
 const CartItem = ({ item, quantity }) => {
   const { removeProduct } = useContext(CartContext);

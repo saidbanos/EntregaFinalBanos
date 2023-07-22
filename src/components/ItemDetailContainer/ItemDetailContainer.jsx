@@ -7,7 +7,6 @@ import Spinner from "react-bootstrap/Spinner";
 import { Link } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
-import "./ItemDetailContainer.css";
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState(null);
@@ -30,7 +29,10 @@ const ItemDetailContainer = () => {
   return (
     <div>
       {isLoading ? (
-        <div className="d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
+        <div
+          className="d-flex justify-content-center align-items-center"
+          style={{ height: "100vh" }}
+        >
           <Spinner animation="border" variant="danger" />
         </div>
       ) : (
@@ -52,9 +54,9 @@ const ItemDetailContainer = () => {
                   </Link>
                 </div>
               </Col>
-              <br/>
-              <br/>
-              <br/>
+              <br />
+              <br />
+              <br />
               <Col xs={12} md={4} className="d-flex justify-content-center">
                 <div>
                   <Link to="/cart">
@@ -64,6 +66,7 @@ const ItemDetailContainer = () => {
               </Col>
             </Row>
           </Container>
+          <br />
         </>
       )}
     </div>

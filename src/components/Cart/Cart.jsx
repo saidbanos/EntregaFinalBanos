@@ -2,8 +2,7 @@ import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
-import Table from "react-bootstrap/Table";
-import "./Cart.css";
+import { Container, Row, Col } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 
 const Cart = () => {
@@ -13,110 +12,147 @@ const Cart = () => {
   if (quantityTotal === 0) {
     return (
       <>
+        <Container fluid>
+          <Row className="justify-content-md-center">
+            <Col xs={12} md={8}>
+              <br />
+              <Card>
+                <Card.Body>
+                  <Card.Header>
+                    <Card.Title>Cart</Card.Title>
+                  </Card.Header>
+                  <Card.Body>
+                    <Card.Text>
+                      <h5>Your cart is empty.</h5>
+                    </Card.Text>
+                  </Card.Body>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
+        </Container>
         <br />
-        <div className="card-container">
-          <Card style={{ width: "65rem" }}>
-            <Card.Body>
-              <Card.Header>
-                <Card.Title>Cart</Card.Title>
-              </Card.Header>
-              <Card.Body>
-                <Card.Text>
-                  <h5>Your cart is empty.</h5>
-                </Card.Text>
-              </Card.Body>
-            </Card.Body>
-          </Card>
-        </div>
-        <br />
-        <div className="button-container">
-          <Link to="/">
-            <Button variant="danger">Continue Shopping</Button>
-          </Link>
-        </div>
+        <Container fluid>
+          <Row className="justify-content-md-center">
+            <Col xs={12} md={8} className="d-flex justify-content-center">
+              <div>
+                <Link to="/">
+                  <Button variant="danger">Continue Shopping</Button>
+                </Link>
+              </div>
+            </Col>
+          </Row>
+        </Container>
       </>
     );
   }
 
   return (
     <>
-      <br />
-      <div className="card-container">
-        <Card style={{ width: "65rem" }}>
-          <Card.Body>
-            <Card.Header>
-              <Card.Title>Cart</Card.Title>
-            </Card.Header>
-            <Card.Body>
-              <Table>
-                <thead>
-                  <tr>
-                    <th></th>
-                    <th>Name</th>
-                    <th>Unit price</th>
-                    <th>Quantity</th>
-                    <th>Subtotal</th>
-                    <th>Remove</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {cart.map((product) => (
-                    <tr key={product.item.id}>
-                      <td>
-                        <Link to={`/item/${product.item.id}`}>
-                          <img className="imgCart" src={product.item.img[0]} />
-                        </Link>
-                      </td>
-                      <td>
-                        <Link to={`/item/${product.item.id}`}>
-                          {product.item.name}
-                        </Link>
-                      </td>
-                      <td>${product.item.price}</td>
-                      <td>{product.quantity}</td>
-                      <td>
-                        $
-                        {Math.round(
-                          product.quantity * product.item.price * 100
-                        ) / 100}
-                      </td>
-                      <td>
-                        <Button
-                          variant="danger"
-                          onClick={() => removeProduct(product.item.id)}
-                        >
-                          Remove
+      <Container fluid>
+        <Row className="justify-content-md-center">
+          <Col xs={12} md={8}>
+            <br />
+            <Card>
+              <Card.Body>
+                <Card.Header>
+                  <Card.Title>Cart</Card.Title>
+                </Card.Header>
+                <Card.Body>
+                  <div className="container">
+                    {cart.map((product) => (
+                      <div key={product.item.id} className="row">
+                        <div className="col-12 col-md-2">
+                          <Link to={`/item/${product.item.id}`}>
+                            <img
+                              className="imgCart"
+                              src={product.item.img[0]}
+                              alt={product.item.name}
+                            />
+                          </Link>
+                        </div>
+                        <div className="col-12 col-md-2">
+                          <Link to={`/item/${product.item.id}`}>
+                            {product.item.name}
+                          </Link>
+                        </div>
+                        <div className="col-12 col-md-2">
+                          ${product.item.price}
+                        </div>
+                        <div className="col-12 col-md-2">
+                          x {product.quantity}
+                        </div>
+                        <div className="col-12 col-md-2">
+                          $
+                          {Math.round(
+                            product.quantity * product.item.price * 100
+                          ) / 100}
+                        </div>
+                        <br />
+                        <br />
+                        <div className="col-12 col-md-2">
+                          <Button
+                            variant="danger"
+                            onClick={() => removeProduct(product.item.id)}
+                          >
+                            Remove
+                          </Button>
+                        </div>
+                        <br />
+                        <br />
+                        <hr />
+                        <br />
+                      </div>
+                    ))}
+                    <div className="row">
+                      <div className="col-12 col-md-2"></div>
+                      <div className="col-12 col-md-2"></div>
+                      <div className="col-12 col-md-2"></div>
+                      <div className="col-12 col-md-2">
+                        <b>Total Quantity: {quantityTotal}</b>
+                      </div>
+                      <div className="col-12 col-md-2">
+                        <b>Total: ${total}</b>
+                      </div>
+                      <br />
+                      <br />
+                      <div className="col-12 col-md-2">
+                        <Button variant="danger" onClick={() => emptyCart()}>
+                          Remove All
                         </Button>
-                      </td>
-                    </tr>
-                  ))}
-                  <tr>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th>Total Quantity: {quantityTotal}</th>
-                    <th>Total: ${total}</th>
-                    <th>
-                      <Button variant="danger" onClick={() => emptyCart()}>
-                        Remove All
-                      </Button>
-                    </th>
-                  </tr>
-                </tbody>
-              </Table>
-            </Card.Body>
-          </Card.Body>
-        </Card>
-      </div>
+                      </div>
+                    </div>
+                  </div>
+                </Card.Body>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+      </Container>
       <br />
-      <div className="button-container">
-        <Link to="/">
-          <Button variant="danger">Continue Shopping</Button>
-        </Link>
-        <Link to="/checkout">
-          <Button variant="success">Continue Checkout</Button>
-        </Link>
-      </div>
+      <Container fluid>
+        <Row className="justify-content-md-center">
+          <Col xs={12} md={4} className="d-flex justify-content-center">
+            <div>
+              <Link to="/">
+                <Button variant="danger">Continue Shopping</Button>
+              </Link>
+            </div>
+          </Col>
+          <br />
+          <br />
+          <br />
+          <Col xs={12} md={4} className="d-flex justify-content-center">
+            <div>
+              <Link to="/checkout">
+                <Button variant="success">Continue Checkout</Button>
+              </Link>
+            </div>
+          </Col>
+        </Row>
+      </Container>
+
+      <br />
     </>
   );
 };
