@@ -12,6 +12,8 @@ This is a basic e-commerce project used for the React course. The application al
 - Add products to the shopping cart
 - View the shopping cart
 - Place an order
+- Dynamic categories
+- Persistent cart
 
 ## Installation
 
