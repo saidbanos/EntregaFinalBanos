@@ -151,7 +151,6 @@ const Cart = () => {
           </Col>
         </Row>
       </Container>
-
       <br />
     </>
   );
