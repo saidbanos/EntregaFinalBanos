@@ -5,8 +5,9 @@ import { db } from "../../services/config";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import Spinner from "react-bootstrap/Spinner";
 import { Link } from "react-router-dom";
-import "./ItemDetailContainer.css";
+import { Container, Row, Col } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
+import "./ItemDetailContainer.css";
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState(null);
@@ -29,29 +30,40 @@ const ItemDetailContainer = () => {
   return (
     <div>
       {isLoading ? (
-        <div className="container">
+        <div className="d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
           <Spinner animation="border" variant="danger" />
         </div>
       ) : (
         <>
           <br />
 
-          <div className="card-container">
+          <div>
             <ItemDetail {...product} />
           </div>
 
           <br />
 
-          <div className="card-container">
-            <div className="button-container">
-              <Link to="/">
-                <Button variant="danger">Continue Shopping</Button>
-              </Link>
-              <Link to="/cart">
-                <Button variant="success">Continue to Cart</Button>
-              </Link>
-            </div>
-          </div>
+          <Container fluid>
+            <Row className="justify-content-md-center">
+              <Col xs={12} md={4} className="d-flex justify-content-center">
+                <div>
+                  <Link to="/">
+                    <Button variant="danger">Continue Shopping</Button>
+                  </Link>
+                </div>
+              </Col>
+              <br/>
+              <br/>
+              <br/>
+              <Col xs={12} md={4} className="d-flex justify-content-center">
+                <div>
+                  <Link to="/cart">
+                    <Button variant="success">Continue to Cart</Button>
+                  </Link>
+                </div>
+              </Col>
+            </Row>
+          </Container>
         </>
       )}
     </div>
