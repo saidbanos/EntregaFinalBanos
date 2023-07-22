@@ -3,6 +3,7 @@ import { CartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
 import "./CartWidget.css";
 import Badge from "react-bootstrap/Badge";
+
 const CartWidget = () => {
   const { quantityTotal } = useContext(CartContext);
   const imgCart = "/icon-cart.png";

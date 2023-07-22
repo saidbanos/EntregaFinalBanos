@@ -3,10 +3,8 @@ import { useParams } from "react-router-dom";
 import { getDoc, doc } from "firebase/firestore";
 import { db } from "../../services/config";
 import ItemDetail from "../ItemDetail/ItemDetail";
-import Spinner from "react-bootstrap/Spinner";
 import { Link } from "react-router-dom";
-import { Container, Row, Col } from "react-bootstrap";
-import Button from "react-bootstrap/Button";
+import { Container, Row, Col, Spinner, Button } from "react-bootstrap";
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState(null);

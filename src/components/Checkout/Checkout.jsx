@@ -3,12 +3,16 @@ import { CartContext } from "../../context/CartContext";
 import { db } from "../../services/config";
 import { collection, addDoc, updateDoc, doc, getDoc } from "firebase/firestore";
 import { Link } from "react-router-dom";
-import Spinner from "react-bootstrap/Spinner";
-import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
-import Form from "react-bootstrap/Form";
-import InputGroup from "react-bootstrap/InputGroup";
-import { Container, Row, Col } from "react-bootstrap";
+import {
+  Container,
+  Row,
+  Col,
+  Spinner,
+  Button,
+  Card,
+  Form,
+  InputGroup,
+} from "react-bootstrap";
 
 const Checkout = () => {
   const { cart, emptyCart, total, quantityTotal } = useContext(CartContext);

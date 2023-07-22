@@ -1,8 +1,7 @@
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
-import Button from "react-bootstrap/Button";
-import Table from "react-bootstrap/Table";
+import { Button, Table } from "react-bootstrap";
 
 const CartItem = ({ item, quantity }) => {
   const { removeProduct } = useContext(CartContext);

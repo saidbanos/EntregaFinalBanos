@@ -4,12 +4,8 @@ import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../services/config";
 import CartWidget from "../CartWidget/CartWidget";
 import "./NavBar.css";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import Offcanvas from "react-bootstrap/Offcanvas";
-import NavDropdown from "react-bootstrap/NavDropdown";
-import { List } from 'react-bootstrap-icons'; // Import the icon
+import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { List } from "react-bootstrap-icons";
 
 const NavBar = () => {
   const imgFicticium = "/imgFicticium.png";
@@ -51,7 +47,11 @@ const NavBar = () => {
                 id={`offcanvasNavbarDropdown-expand-${expand}`}
               >
                 {categories.map((category) => (
-                  <NavDropdown.Item key={category.id} as={Link} to={`/category/${category.description}`}>
+                  <NavDropdown.Item
+                    key={category.id}
+                    as={Link}
+                    to={`/category/${category.description}`}
+                  >
                     {category.displayName}
                   </NavDropdown.Item>
                 ))}

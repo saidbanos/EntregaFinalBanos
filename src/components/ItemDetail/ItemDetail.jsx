@@ -1,9 +1,7 @@
 import { useState, useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import ItemCount from "../ItemCount/ItemCount";
-import { Container, Row, Col } from "react-bootstrap";
-import Card from "react-bootstrap/Card";
-import Carousel from "react-bootstrap/Carousel";
+import { Container, Row, Col, Card, Carousel } from "react-bootstrap";
 
 const ItemDetail = ({ id, name, price, img, description, stock }) => {
   const [addQuantity, setAddQuantity] = useState(0);
@@ -60,44 +58,44 @@ const ItemDetail = ({ id, name, price, img, description, stock }) => {
         </Container>
       ) : stock <= 0 ? (
         <Container fluid>
-        <Row className="justify-content-md-center">
-          <Col xs={12} md={8}>
-            <br />
-            <Card>
-              <Card.Body>
-                <Card.Header>
-                  <Card.Title>Product availability</Card.Title>
-                </Card.Header>
+          <Row className="justify-content-md-center">
+            <Col xs={12} md={8}>
+              <br />
+              <Card>
                 <Card.Body>
-                  <Card.Text>
-                    <h5>This product is not in stock at the moment.</h5>
-                  </Card.Text>
+                  <Card.Header>
+                    <Card.Title>Product availability</Card.Title>
+                  </Card.Header>
+                  <Card.Body>
+                    <Card.Text>
+                      <h5>This product is not in stock at the moment.</h5>
+                    </Card.Text>
+                  </Card.Body>
                 </Card.Body>
-              </Card.Body>
-            </Card>
-          </Col>
-        </Row>
-      </Container>
+              </Card>
+            </Col>
+          </Row>
+        </Container>
       ) : (
         <Container fluid>
-        <Row className="justify-content-md-center">
-          <Col xs={12} md={8}>
-            <br />
-            <Card>
-              <Card.Body>
-                <Card.Header>
-                  <Card.Title>Product availability</Card.Title>
-                </Card.Header>
+          <Row className="justify-content-md-center">
+            <Col xs={12} md={8}>
+              <br />
+              <Card>
                 <Card.Body>
-                  <Card.Text>
-                    <h5>The product with Id: {id} does not exist.</h5>
-                  </Card.Text>
+                  <Card.Header>
+                    <Card.Title>Product availability</Card.Title>
+                  </Card.Header>
+                  <Card.Body>
+                    <Card.Text>
+                      <h5>The product with Id: {id} does not exist.</h5>
+                    </Card.Text>
+                  </Card.Body>
                 </Card.Body>
-              </Card.Body>
-            </Card>
-          </Col>
-        </Row>
-      </Container>
+              </Card>
+            </Col>
+          </Row>
+        </Container>
       )}
     </>
   );
