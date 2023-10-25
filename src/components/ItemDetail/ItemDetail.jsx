@@ -39,7 +39,7 @@ const ItemDetail = ({ id, name, price, img, description, stock }) => {
                   </Card.Header>
                   <Card.Body>
                     <Card.Text>{description}</Card.Text>
-                    <Card.Text>
+                    {/* <Card.Text>
                       <h5>Price: ${price}</h5>
                     </Card.Text>
                     <Card.Text>Id: {id}</Card.Text>
@@ -49,7 +49,7 @@ const ItemDetail = ({ id, name, price, img, description, stock }) => {
                         stock={stock}
                         addFunction={manejadorQuantity}
                       />
-                    </Card.Text>
+                    </Card.Text> */}
                   </Card.Body>
                 </Card.Body>
               </Card>

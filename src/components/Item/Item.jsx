@@ -6,7 +6,7 @@ const Item = ({ id, name, price, img, stock }) => {
   return (
     <div className="item-container">
       <br />
-      <Card border="light" bg="light" style={{ width: "18rem" }}>
+      <Card border="light" style={{ width: "18rem" }}>
         <Link to={`/item/${id}`}>
           <Card.Img variant="top" src={img[0]} />
         </Link>
@@ -14,16 +14,16 @@ const Item = ({ id, name, price, img, stock }) => {
           <Link to={`/item/${id}`}>
             <Card.Title> {name} </Card.Title>
           </Link>
-          <Card.Text>
+          {/* <Card.Text>
             Price: ${price}
             <br />
             Id: {id}
             <br />
             Stock: {stock}
-          </Card.Text>
-          <Link to={`/item/${id}`}>
+          </Card.Text> */}
+          {/* <Link to={`/item/${id}`}>
             <img className="imgSeeDetails" src={"/quick-view-icon.png"} />
-          </Link>
+          </Link> */}
         </Card.Body>
       </Card>
     </div>

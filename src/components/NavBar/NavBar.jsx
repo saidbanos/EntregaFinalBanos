@@ -36,13 +36,20 @@ const NavBar = () => {
         >
           <Container fluid>
             <Navbar.Brand>
-              <Link to="/">
+              Said Banos
+              <br/>
+              <br/>
+              saidbanos@gmail.com
+              <br/>
+              647-854-5270
+              
+              {/* <Link to="/">
                 <img className="imgFicticium" src={imgFicticium} alt="" />
-              </Link>
+              </Link> */}
             </Navbar.Brand>
 
             <Nav className="me-auto">
-              <NavDropdown
+              {/* <NavDropdown
                 title={<List color="grey" size={30} />}
                 id={`offcanvasNavbarDropdown-expand-${expand}`}
               >
@@ -55,10 +62,10 @@ const NavBar = () => {
                     {category.displayName}
                   </NavDropdown.Item>
                 ))}
-              </NavDropdown>
+              </NavDropdown> */}
             </Nav>
-
-            <CartWidget />
+{/* 
+            <CartWidget /> */}
           </Container>
         </Navbar>
 

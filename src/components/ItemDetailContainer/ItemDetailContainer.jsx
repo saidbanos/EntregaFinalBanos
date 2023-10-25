@@ -48,7 +48,7 @@ const ItemDetailContainer = () => {
               <Col xs={12} md={4} className="d-flex justify-content-center">
                 <div>
                   <Link to="/">
-                    <Button variant="danger">Continue Shopping</Button>
+                    <Button variant="danger">Go back</Button>
                   </Link>
                 </div>
               </Col>
@@ -56,11 +56,11 @@ const ItemDetailContainer = () => {
               <br />
               <br />
               <Col xs={12} md={4} className="d-flex justify-content-center">
-                <div>
+                {/* <div>
                   <Link to="/cart">
                     <Button variant="success">Continue to Cart</Button>
                   </Link>
-                </div>
+                </div> */}
               </Col>
             </Row>
           </Container>
